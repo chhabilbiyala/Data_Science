@@ -1,0 +1,76 @@
+Exception handling in Python allows you to handle errors or exceptional situations in a controlled manner. The basic structure includes the try, except, else, and finally blocks.
+
+try:
+    # Code that may raise an exception
+    num1 = int(input("Enter a numerator: "))
+    num2 = int(input("Enter a denominator: "))
+    result = num1 / num2
+
+except ZeroDivisionError:
+    # Handle division by zero
+    print("Error: Cannot divide by zero.")
+
+except ValueError:
+    # Handle invalid input (non-integer)
+    print("Error: Please enter valid integers.")
+
+else:
+    # Code to execute if no exception is raised
+    print(f"The result of the division is: {result}")
+
+finally:
+    # Code to execute regardless of whether an exception is raised
+    print("Finally block: This will always be executed.")
+-------------------------------------------------------------------------
+Example:- 
+
+try:
+    # Attempt to open a file for reading
+    file_path = input("Enter the path of the file: ")
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+except FileNotFoundError:
+    # Handle the case where the file is not found
+    print(f"Error: File not found at {file_path}")
+
+except PermissionError:
+    # Handle the case where the file cannot be opened due to permission issues
+    print(f"Error: Permission denied to open the file at {file_path}")
+
+else:
+    # Print the content of the file if no exception is raised
+    print(f"File content:\n{content}")
+
+finally:
+    # Close any resources or perform cleanup tasks
+    print("Finally block: Cleanup tasks completed.")
+-------------------------------------------------------------------------
+CUSTOM_EXCEPTION_HANDLING:- Custom exception handling in Python involves creating your own exception classes to represent specific types of errors that may occur in your code. This allows you to define and raise exceptions tailored to your application's needs. Here's an example:
+
+# Define a custom exception class
+class CustomError(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(message)
+
+# Function that may raise a custom exception
+def divide_numbers(a, b):
+    if b == 0:
+        raise CustomError("Cannot divide by zero.")
+    return a / b
+
+# Example of using the custom exception
+try:
+    result = divide_numbers(10, 0)
+except CustomError as ce:
+    print(f"Custom error caught: {ce.message}")
+else:
+    print(f"The result is: {result}")
+
+In this example:
+We define a custom exception class CustomError that inherits from the built-in Exception class. This class has an __init__ method to set a custom error message.
+The divide_numbers function checks if the divisor (b) is zero and raises the CustomError if it is.
+In the try block, we call divide_numbers with arguments that would trigger the custom exception.
+The except CustomError as ce block catches the custom exception, and we can access the error message through ce.message.
+If no exception occurs, the else block is executed, and we print the result.

@@ -1,0 +1,57 @@
+Class in Python: A class in Python is a blueprint for creating objects. An object is an instance of a class, and a class defines the properties (attributes) and behaviors (methods) that its objects will have. Classes provide a way to structure and model the code, making it more organized, reusable, and scalable.
+
+Why Use Classes:
+1) Encapsulation: Classes encapsulate data (attributes) and the methods that operate on that data. Helps in organizing code and keeping related functionality together.
+2) Abstraction: Classes provide abstraction by hiding the internal implementation details and exposing only what's necessary.
+3) Reusability: Classes promote code reusability. Once a class is defined, it can be used to create multiple instances (objects).
+4) Inheritance: Classes support inheritance, allowing the creation of new classes based on existing ones, promoting code reuse and extension.
+Creating a Class:
+
+class MyClass:
+    def __init__(self, attribute1, attribute2):
+        self.attribute1 = attribute1
+        self.attribute2 = attribute2
+
+    def method(self):
+        # Code here
+
+class: Keyword to define a class.
+__init__(self, ...): Special method (constructor) called when an object is created. Initializes object attributes.
+Self in Python: self is a convention (not a keyword) used to represent the instance of the class. It is the first parameter of instance methods and refers to the instance calling the method. It allows access to the instance's attributes and methods within the class.
+Example:
+In object-oriented programming, the typical sequence of actions involves creating an instance of a class (instantiation) and then applying methods to that instance. 
+
+class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def display_info(self):
+        print(f"{self.make} {self.model}")
+
+# Creating instances
+car1 = Car("Toyota", "Camry")
+car2 = Car("Honda", "Accord")
+
+# Accessing attributes and calling methods
+car1.display_info()  # Output: Toyota Camry
+car2.display_info()  # Output: Honda Accord
+------------------------------
+Example-2:- 
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"Hi, I'm {self.name}, and I am {self.age} years old.")
+
+# Creating instances
+person1 = Person("Alice", 30)
+person2 = Person("Bob", 25)
+
+# Accessing attributes and calling methods
+person1.introduce()  # Output: Hi, I'm Alice, and I am 30 years old.
+person2.introduce()  # Output: Hi, I'm Bob, and I am 25 years old.
+------------------------------------------------------------------------------

@@ -1,0 +1,98 @@
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a new class to inherit attributes and methods from an existing class. The existing class is often referred to as the base class or parent class, and the new class is called the derived class or child class. Inheritance promotes code reuse and helps in creating a hierarchy of classes.
+Basic Syntax of Inheritance:
+class BaseClass:
+    # Attributes and methods of the base class
+
+class DerivedClass(BaseClass):
+    # Additional attributes and methods of the derived class
+--------------
+Key Concepts and Terminology:
+Base Class (Parent Class): The class whose attributes and methods are inherited by another class. It is also referred to as the parent class, superclass, or base class.
+
+Derived Class (Child Class): The class that inherits attributes and methods from another class. It is also referred to as the child class, subclass, or derived class.
+
+Inheritance Type: Python supports single inheritance, where a class can inherit from only one base class. However, a class can have multiple derived classes.
+--------------
+Example:- 
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def make_sound(self):
+        pass
+
+class Dog(Animal):
+    def make_sound(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def make_sound(self):
+        return "Meow!"
+
+# Creating instances of the derived classes
+my_dog = Dog("Buddy")
+my_cat = Cat("Whiskers")
+
+# Accessing attributes and methods inherited from the base class
+print(my_dog.name)         # Output: Buddy
+print(my_dog.make_sound())  # Output: Woof!
+print(my_cat.name)          # Output: Whiskers
+print(my_cat.make_sound())   # Output: Meow!
+
+In this example:
+Animal is the base class with a common attribute name and a method make_sound.
+Dog and Cat are derived classes that inherit from the Animal class.
+Both derived classes provide their own implementation of the make_sound method.
+-------------------------
+Method Resolution Order (MRO): In Python, the order in which base classes are specified in the derived class determines the Method Resolution Order (MRO). The MRO is important when dealing with multiple inheritance, where a class inherits from more than one base class.
+Example of Multiple Inheritance:
+
+class A:
+    def method(self):
+        print("Method from class A")
+
+class B(A):
+    def method(self):
+        print("Method from class B")
+
+class C(A):
+    def method(self):
+        print("Method from class C")
+
+class D(B, C):
+    pass
+
+obj = D()
+obj.method()  # Output: Method from class B
+
+In this example, class D inherits from both classes B and C. The MRO determines that the method method from class B takes precedence.
+-------------------------
+1) Multilevel Inheritance: In multilevel inheritance, a class inherits from another class, and then another class inherits from the derived class. It creates a chain of inheritance where one class is derived from another, and a third class is derived from the second class.
+Example:
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+class Labrador(Dog):
+    def color(self):
+        print("Labrador is black")
+-------------------------
+2) Multiple Inheritance: In multiple inheritance, a class can inherit from more than one base class. This allows a derived class to have attributes and methods from multiple parent classes.
+Example:
+
+class A:
+    def method_a(self):
+        print("Method from class A")
+
+class B:
+    def method_b(self):
+        print("Method from class B")
+
+class C(A, B):
+    def method_c(self):
+        print("Method from class C")
+-------------------------

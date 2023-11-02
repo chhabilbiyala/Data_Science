@@ -1,0 +1,21 @@
+In Python, there are several built-in exception classes representing common types of errors. Here is a list of some general exceptions:
+
+SyntaxError: Raised when there is a syntax error in the code.
+IndentationError: Raised when there is an incorrect indentation.
+NameError: Raised when a local or global name is not found.
+TypeError: Raised when an operation or function is applied to an object of an inappropriate type.
+ValueError: Raised when a function receives an argument of the correct type but an inappropriate value.
+FileNotFoundError: Raised when trying to open a file that cannot be found.
+ZeroDivisionError: Raised when division or modulo by zero is encountered.
+IndexError: Raised when a sequence subscript is out of range.
+KeyError: Raised when a dictionary key is not found.
+AttributeError: Raised when an attribute reference or assignment fails.
+ImportError: Raised when an import statement cannot find the specified module.
+OSError: Base class for I/O errors.
+RuntimeError: Raised when an error does not fall under any of the above categories.
+
+These are general exceptions, and Python provides a rich set of specific exception classes for handling various error conditions. It's often a good practice to catch specific exceptions rather than using a broad except clause to handle all exceptions. This allows for more targeted error handling in your code.
+
+
+
+

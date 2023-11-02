@@ -1,0 +1,100 @@
+In Python, a static method is a method that belongs to a class rather than an instance of the class. Unlike regular methods, static methods don't have access to the instance or its attributes. They are bound to the class and not the instance of the class. You define a static method using the @staticmethod decorator.
+Here's a simple example to illustrate the concept:
+
+class MathOperations:
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+# Usage
+result = MathOperations.add(3, 4)
+print(result)  # Output: 7
+-------------
+In this example:
+The add method is a static method because it is decorated with @staticmethod.
+You can call the add method directly on the class MathOperations without creating an instance of it. Otherwise without @staticmethod we have to create an instance first: 
+
+class MathOperations:
+    def add(self, x, y):
+        return x + y
+
+# Create an instance
+math_instance = MathOperations()
+
+# Call the method on the instance
+result = math_instance.add(3, 4)
+print(result)  # Output: 7
+
+In this version, the add method is now an instance method, and you need to create an instance (math_instance) to call the method. The self parameter represents the instance itself.
+------------------
+Why Use Static Methods?
+1) Class-Level Operations: Static methods are useful for operations that are related to the class as a whole, rather than to instances of the class. They can perform tasks that don't involve instance-specific data.
+2) No Access to Instance Attributes: Since static methods don't have access to instance attributes, they cannot modify or read instance-specific data. This makes them suitable for operations that only rely on parameters passed to the method.
+3) Code Organization: Static methods can be used to group related functionality within a class. If a method doesn't need to access or modify instance-specific data, it can be defined as a static method to improve code organization.
+
+Here's an example that demonstrates the use of a static method for a class-level operation:
+
+class DateUtils:
+    @staticmethod
+    def is_valid_date(year, month, day):
+        # Perform validation logic
+        return 1 <= month <= 12 and 1 <= day <= 31
+
+# Usage
+result = DateUtils.is_valid_date(2023, 10, 29)
+print(result)  # Output: True
+---------------------------------------------
+In Python, you can call a static method inside another static method, a class method, or an instance method using the following syntax:
+1)  Call Static Method Inside Static Method:
+    You can directly call a static method inside another static method using the class name.
+
+class MyClass:
+    @staticmethod
+    def static_method1():
+        print("Static Method 1")
+
+    @staticmethod
+    def static_method2():
+        MyClass.static_method1()
+        print("Static Method 2")
+
+# Call static_method2
+MyClass.static_method2()
+-----------------
+2) Call Static Method Inside Class Method:
+Inside a class method, you can use the class name to call a static method.
+
+class MyClass:
+    @staticmethod
+    def static_method():
+        print("Static Method")
+
+    @classmethod
+    def class_method(cls):
+        cls.static_method()
+
+# Call class_method
+MyClass.class_method()
+------------------
+3) Call Static Method Inside Instance Method:
+Inside an instance method, you can use the class name or self (the instance) to call a static method.
+
+class MyClass:
+    @staticmethod
+    def static_method():
+        print("Static Method")
+
+    def instance_method(self):
+        MyClass.static_method()
+        # or
+        self.static_method()
+
+# Create an instance
+obj = MyClass()
+
+# Call instance_method
+obj.instance_method()
+-------------------------------------------------------------------------------------------
+
+
+

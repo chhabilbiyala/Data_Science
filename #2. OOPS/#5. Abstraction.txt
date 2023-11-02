@@ -1,0 +1,110 @@
+Abstraction in the context of programming refers to the concept of simplifying complex systems by modeling classes based on their essential properties and behaviors, while hiding unnecessary details. It involves creating abstract classes or interfaces that define a clear and well-defined interface for interaction, without exposing the internal complexities of the implementation.
+In simpler terms, abstraction allows you to focus on what an object does rather than how it does it. It provides a way to represent the essential features of an object while ignoring the finer details that are not relevant to the current context. Abstraction is a fundamental principle of object-oriented programming and contributes to code organization, modularity, and ease of maintenance.
+
+In the provided example, I am demonstrating abstraction through abstract classes and methods using the abc module in Python. Let's break down the example:
+
+Abstract Base Class (PWskills):
+PWskills is an abstract base class (ABC) that declares three abstract methods using the @abc.abstractmethod decorator.
+The abstract methods are student_details, student_assignment, and student_marks.
+These methods serve as a blueprint, defining the interface that concrete subclasses must implement.
+The @abstractmethod decorator is a part of the abc (Abstract Base Classes) module in Python, and it is used to declare abstract methods within abstract classes. Abstract methods are methods that are marked for implementation by concrete subclasses. When a method is marked as abstract, it must be implemented in any concrete (non-abstract) subclass.
+
+import abc
+
+class PWskills(abc.ABC):  # Inherit from abc.ABC to create an abstract base class
+    @abc.abstractmethod
+    def student_details(self):
+        pass
+
+    @abc.abstractmethod
+    def student_assignment(self):
+        pass
+
+    @abc.abstractmethod
+    def student_marks(self):
+        pass
+-------------------
+Concrete Subclasses (student_details, student_assignment, student_marks):
+Three concrete subclasses (student_details, student_assignment, student_marks) inherit from the abstract base class PWskills (due to that decorator).
+Each concrete subclass provides specific implementations for the abstract methods.
+
+class student_details(PWskills):
+    def Rohan_details(self):
+        return "These are Rohan details"
+
+    def Gaurav_details(self):
+        return "These are Gaurav details"
+
+class student_assignment(PWskills):
+    def assignment_No_1(self):
+        return "Write a Python program to print Fibonacci series"
+
+    def assignment_No_2(self):
+        return "Write a Python program to print prime numbers up to 100"
+
+class student_marks(PWskills):
+    def Rohan_marks(self):
+        return "Rohan got 80 marks"
+
+    def Gaurav_marks(self):
+        return "Gaurav got 85 marks"
+-------------------
+Usage of Concrete Subclasses:
+Instances of concrete subclasses are created, and their methods are called to obtain details, assignments, and marks.
+
+# Usage
+SD = student_details()
+print(SD.Rohan_details())  # Output: These are Rohan details
+print(SD.Gaurav_details())  # Output: These are Gaurav details
+
+SA = student_assignment()
+print(SA.assignment_No_1())  # Output: Write a Python program to print Fibonacci series
+print(SA.assignment_No_2())  # Output: Write a Python program to print prime numbers up to 100
+
+SM = student_marks()
+print(SM.Rohan_marks())  # Output: Rohan got 80 marks
+print(SM.Gaurav_marks())  # Output: Gaurav got 85 marks
+-------------------
+Explanation:
+The abstract base class (PWskills) defines a common interface for various skills related to students.
+Concrete subclasses (student_details, student_assignment, student_marks) provide specific implementations for each skill.
+The usage of the concrete subclasses demonstrates how abstraction allows you to interact with the common interface (i.e base class PWskills) without worrying about the specific details of each implementation.
+------------------
+Summary: Achieving Abstraction with Abstract Classes and Concrete Subclasses
+
+Essential Features: Abstraction is achieved through an abstract base class (PWskills), defining essential features with abstract methods: student_details, student_assignment, and student_marks. These methods represent core aspects of a student's skills, such as details, assignments, and marks.
+
+Ignoring Finer Details: The abstract base class refrains from providing specific implementation details for abstract methods.
+Concrete subclasses (student_details, student_assignment, student_marks) are responsible for implementing the finer details of each skill.
+
+Clear Interface: The abstract base class creates a clear and well-defined interface (PWskills), offering a blueprint for obtaining skills-related information without delving into specific implementations.
+Users of the code interact with the abstract interface, calling methods without concerning themselves with intricate details.
+
+Flexibility and Modularity: Abstraction allows for flexibility, enabling the addition of new concrete subclasses without modifying existing code. Promotes modularity by organizing related functionality within classes and abstracting away implementation details.
+--------------------------------------------------------------------------
+DECORATOR FUNCTION:- In Python, a decorator is a special type of function that is used to modify the behavior of another function. Decorators are applied using the @decorator_name syntax above the definition of a function. They allow you to wrap another function and extend or modify its behavior without changing its code.
+Here is a simple example of a decorator:
+
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+# When you call say_hello, it's actually calling the wrapper inside my_decorator
+say_hello()
+
+In this example: my_decorator is a decorator function that takes another function func as an argument and defines a new function wrapper.
+The wrapper function contains code that runs before and after calling the original function func.
+@my_decorator is used to decorate the say_hello function. It's equivalent to writing say_hello = my_decorator(say_hello).
+When you call say_hello(), it invokes the modified behavior defined in the wrapper function.
+
+Decorators are commonly used for:
+Code Organization: They help keep the code clean and organized by separating concerns.
+Code Reusability: You can apply the same decorator to multiple functions.
+Aspect-Oriented Programming (AOP): Decorators enable you to add cross-cutting concerns to functions, such as logging, timing, or authentication, without modifying their code directly.

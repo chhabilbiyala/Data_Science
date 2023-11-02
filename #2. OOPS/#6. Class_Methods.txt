@@ -1,0 +1,100 @@
+In Python, a class method is a special kind of method that belongs to a class rather than an instance of the class. It's marked with the @classmethod decorator. Class methods have access to the class itself, rather than individual instances, and they are defined using the cls parameter (by convention). The primary purpose of a class method is to work with class-level attributes and perform operations related to the class itself rather than instances.
+Example:
+
+class MyClass:
+    class_variable = "I am a class variable"
+
+    @classmethod
+    def print_class_variable(cls):
+        print(cls.class_variable)
+
+# Usage
+MyClass.print_class_variable()  # Outputs: I am a class variable
+-----------------
+Explanation:
+Decorator (@classmethod): The @classmethod decorator is used to define a class method. It indicates that the following method     belongs to the class rather than an instance.
+cls Parameter: A class method takes cls as its first parameter, which refers to the class itself. This is similar to using self in regular instance methods.
+Access to Class Variables: Class methods can access and modify class variables, but they don't have access to instance-specific data.
+
+Class Method vs. Instance Method: Regular methods in a class are called instance methods and are bound to instances of the class (objects). They take self as the first parameter to refer to the instance.
+Class methods, marked with @classmethod, take cls as the first parameter and have access to the class itself, not a specific instance.
+Accessing Class Variables: Class methods can access and manipulate class variables (like class_variable in this example) because they operate on the class, not on individual instances.
+Shared Data: Class variables are shared among all instances of the class. Class methods provide a way to work with and modify this shared data at the class level.
+--------------------------------------------------
+Example (Alternative constructor):- 
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @classmethod
+    def from_birth_year(cls, name, birth_year):
+        age = datetime.date.today().year - birth_year
+        return cls(name, age)
+
+# Usage
+person1 = Person("Alice", 25)
+person2 = Person.from_birth_year("Bob", 1990)
+-----------------
+In this example:
+The regular constructor (__init__) takes name and age parameters and creates a Person instance with these attributes.
+The alternative constructor (from_birth_year) is a class method that takes name and birth_year as parameters. It calculates the age and then calls the regular constructor (cls(name, age)) to create a Person instance.
+Usage:
+person1 is created using the regular constructor, providing both name and age.
+person2 is created using the alternative constructor, providing name and birth_year. The alternative constructor calculates the age and creates the instance.
+Alternative constructors provide a way to make object instantiation more flexible, allowing developers to choose different parameter sets or data formats based on their needs.
+------------------
+ If you use a regular instance method instead of a class method (without the @classmethod decorator), you would need to create an instance of the class before calling the method. Regular instance methods are bound to instances of the class and require an object on which to operate. Here's an example to illustrate the difference:
+
+ import datetime
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def from_birth_year(self, birth_year):
+        age = datetime.date.today().year - birth_year
+        return Person(self.name, age)
+
+# Usage with a regular instance method
+person1 = Person("Alice", 25)
+
+# Call the regular instance method on the object
+person2 = person1.from_birth_year(1990)
+
+# Print the output
+print(person2.name, person2.age)
+------------------------------------------------------------------------
+we can also add an external function to a class using a @classmethod decorator by defining the external function as a class method. The external function should take the class itself as its first parameter (conventionally named cls) and can then access class variables or perform operations related to the class.
+Here's an example:
+
+class MathOperations:
+    @classmethod
+    def add(cls, x, y):
+        return x + y
+
+# Usage
+result = MathOperations.add(3, 4)
+print(result)  # Output: 7
+---------------
+In this example:
+The add method is defined as a class method using the @classmethod decorator.
+The method takes the class itself (cls) as its first parameter.
+The method performs the addition operation on the parameters x and y and returns the result.
+You can also have an external function defined outside the class and use the @classmethod decorator to turn it into a class method:
+
+class MathOperations:
+    @classmethod
+    def add(cls, x, y):
+        return external_addition(cls, x, y)
+
+# External function
+def external_addition(cls, x, y):
+    return x + y
+
+# Usage
+result = MathOperations.add(3, 4)
+print(result)  # Output: 7
+

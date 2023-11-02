@@ -1,0 +1,81 @@
+The logging module in Python provides a flexible framework for emitting log messages from Python programs. It is part of the Python Standard Library and is used to log messages from applications for various purposes, such as debugging, monitoring, and auditing.
+Key components and concepts of the logging module include:
+
+1) Loggers: Loggers are the main entry points for logging messages. They provide a way to namespace the log messages.
+You can create loggers using logging.getLogger(name).
+
+import logging
+handler = logging.StreamHandler()  # Console output
+-------------------------------------------------------------
+2) Handlers: Handlers determine where log messages go. They send the log messages to various outputs, such as the console, files, or external services. Common handlers include StreamHandler for console output and FileHandler for writing to files.
+
+import logging
+handler = logging.StreamHandler()  # Console output
+-------------------------------------------------------------
+3) Formatters: Formatters specify the layout of the log messages. They define how the log messages should be formatted, including the timestamp, log level, and message content. You can create custom formatters or use the built-in formatters.
+
+import logging
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+-------------------------------------------------------------
+4) Log Levels: Log levels indicate the severity of a log message. The logging module defines several log levels, such as DEBUG, INFO, WARNING, ERROR, and CRITICAL. Messages with a level below the specified threshold are ignored.
+
+import logging
+logging.basicConfig(level=logging.DEBUG)
+-------------------------------------------------------------
+5) Configuring Logging: The basicConfig function is used to configure the root logger. It can set the logging level, format, and output handler.
+
+import logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+-------------------------------------------------------------
+6) Logging Example:
+
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Create a logger
+logger = logging.getLogger('my_logger')
+
+# Log messages
+logger.debug('This is a debug message')
+logger.info('This is an info message')
+logger.warning('This is a warning message')
+logger.error('This is an error message')
+logger.critical('This is a critical message')
+-------------------------------------------------------------
+In the logging module in Python, log levels are used to categorize log messages based on their severity. The available log levels, in increasing order of severity, are as follows:
+
+1) NOTSET (0): This is a special log level that is used to indicate that no level has been set. It is not typically used in practice and serves as a default or unset level.
+
+2) DEBUG (10): This level is used for detailed diagnostic information. It is often used during development and debugging to trace the flow of a program.
+
+3) INFO (20): This level is used to confirm that things are working as expected. It provides information about normal program behavior.
+
+4) WARNING (30): This level indicates a potential issue or situation that could cause problems in the future. It is a warning that something unexpected happened, but the program can still continue.
+
+5) ERROR (40): This level indicates a more serious problem that prevented a function from completing. It suggests that an error occurred, but the program can still run in some degraded form.
+
+6) CRITICAL (50): This is the highest log level and is used to indicate a very serious error that may prevent the program from continuing.
+A critical error typically means that the application cannot proceed further.
+
+When configuring the logging system, you can set a threshold level, and log messages with a level equal to or higher than the threshold will be emitted. For example, if you set the threshold to INFO, messages with levels INFO, WARNING, ERROR, and CRITICAL will be emitted, but DEBUG messages will be ignored.
+
+Here's an example of setting the logging level:
+
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+logger = logging.getLogger('example_logger')
+logger.debug('This message will not be displayed')
+logger.info('This is an informational message')
+logger.warning('This is a warning message')
+logger.error('This is an error message')
+logger.critical('This is a critical message')
+
+In this example, only log messages with a level of INFO or higher will be displayed. Messages with a DEBUG level will be ignored.
+-------------------------------------------------------------
+
+
+

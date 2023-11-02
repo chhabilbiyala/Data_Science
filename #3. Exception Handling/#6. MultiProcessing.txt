@@ -1,0 +1,89 @@
+Multiprocessing in Python refers to the ability of a program to execute multiple processes concurrently, taking advantage of multiple CPU cores. Each process runs independently, with its own memory space, allowing for parallel execution and improved performance. The primary module for multiprocessing in Python is multiprocessing.
+Here's a simple and detailed explanation of multiprocessing in Python:
+
+Simple Explanation:
+In Python, you can use the multiprocessing module to create and manage multiple processes. Each process runs independently of the others, and they can execute tasks concurrently, making use of the available CPU cores. This is particularly useful for computationally intensive tasks and parallel processing.
+
+1) Import the Module: Start by importing the multiprocessing module.
+
+import multiprocessing
+--------------------------------------------------------------------------------
+2) Define a Target Function: Create a function that represents the task you want to parallelize. This function will be the target for your multiprocessing.
+
+def my_function(arg):
+    # code to be executed in each process
+--------------------------------------------------------------------------------
+3) Create a Process: Instantiate a Process object, specifying the target function and any arguments.
+
+my_process = multiprocessing.Process(target=my_function, args=(my_arg,))
+--------------------------------------------------------------------------------
+4) Start the Process: Call the start() method to initiate the execution of the process.
+
+my_process.start()
+--------------------------------------------------------------------------------
+5) Join the Process: Use the join() method to wait for the process to complete before proceeding with the main program.
+
+my_process.join()
+--------------------------------------------------------------------------------
+6) Multiple Processes: You can create and run multiple processes simultaneously, each with its own target function.
+
+process1 = multiprocessing.Process(target=function1, args=(arg1,))
+process2 = multiprocessing.Process(target=function2, args=(arg2,))
+
+process1.start()
+process2.start()
+
+process1.join()
+process2.join()
+--------------------------------------------------------------------------------
+7) Sharing Data: Processes run in separate memory spaces, but you can share data between them using mechanisms like Queue or Pipe.
+
+from multiprocessing import Queue
+my_queue = Queue()
+
+def my_function(queue):
+    queue.put("Data from the process")
+
+my_process = multiprocessing.Process(target=my_function, args=(my_queue,))
+--------------------------------------------------------------------------------
+8) Pool for Multiple Processes: The Pool class can simplify managing multiple processes.
+
+from multiprocessing import Pool
+def my_function(arg):
+    # code to be executed in each process
+
+with Pool(processes=4) as pool:
+    pool.map(my_function, [arg1, arg2, arg3, arg4])
+--------------------------------------------------------------------------------
+Example:- 
+from multiprocessing import Pool
+
+def square_number(x):
+    return x * x
+
+if __name__ == "__main__":
+    # Create a Pool with 4 processes
+    with Pool(processes=4) as pool:
+        # Define a list of numbers
+        numbers = [1, 2, 3, 4, 5]
+
+        # Use the map function to apply the square_number function to each number
+        results = pool.map(square_number, numbers)
+
+    # Print the results
+    print("Original numbers:", numbers)
+    print("Squared numbers:", results)
+------------
+Explanation:
+The square_number function takes a number x and returns its square.
+The if __name__ == "__main__": block ensures that the multiprocessing code is only executed when the script is run directly (not imported).
+A Pool is created with processes=4, meaning it will utilize four processes.
+The map function is used to apply the square_number function to each element in the numbers list. The map function distributes the work among the processes in the pool.
+The results are printed, showing the original numbers and their squared values.
+When you run this script, you should see that the numbers are squared concurrently by the different processes in the pool, demonstrating the basic idea of multiprocessing.
+
+
+
+
+
+

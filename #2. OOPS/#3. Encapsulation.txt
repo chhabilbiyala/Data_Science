@@ -1,0 +1,89 @@
+ENCAPSULATION:- Encapsulation is one of the fundamental principles of object-oriented programming (OOP) and is often described as "wrapping up" of data (attributes) and methods (functions) into a single unit known as a class. The key idea behind encapsulation is to hide the internal details of how an object works and to provide a controlled interface to interact with the object. It helps in promoting modularity, making code more readable, and reducing the complexity of the program.
+
+Simple Explanation:
+Imagine you have a TV remote. The remote has buttons (methods) and a battery compartment (data). You don't need to know how the buttons work internally or how the battery powers the remote. You only need to interact with the buttons (interface) to control the TV. In this analogy:
+
+The TV remote is like a class.
+The buttons and battery compartment are like attributes and methods.
+You interact with the remote through the provided buttons, and you don't need to know the internal details.
+
+Example:- 
+class bank_account:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def deposit(self, amount):
+        self.__balance = self.__balance + amount
+        print("Successfully Deposited")
+
+    def widraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance = self.__balance - amount  
+            print("Widrawl successful")
+        else:
+            print("Insufficient Bank Balance")
+
+    def get_balance(self):  # Getter method for accessing the private attribute
+        return self.__balance
+
+# Creating an instance of the bank_account class
+chhabil = bank_account(1000)
+
+# Depositing money
+chhabil.deposit(500)
+
+# Attempting to withdraw money
+chhabil.widraw(200)
+
+# Getting the balance using the getter method
+print(chhabil.get_balance())  #1300
+--------------------------
+Here's how encapsulation is implemented in this example:
+Private Attribute: self.__balance is a private attribute. It is marked as private by using a double underscore (__) prefix.
+The use of self."__balance ensures that the balance attribute cannot be directly accessed or modified from outside the class."
+
+Public Methods: deposit and widraw are public methods that provide controlled access to the private attribute __balance.
+The deposit method allows adding funds to the account, and the widraw method allows withdrawing funds if there are sufficient funds.
+
+Getter Method: get_balance is a getter method that provides a controlled way to access the private attribute __balance from outside the class.
+
+Encapsulation in Action: Outside code interacts with the bank_account object through its public methods (deposit, widraw, get_balance).
+The internal state (balance) is not directly exposed, ensuring that it can only be modified and accessed in a controlled manner.
+----------------------------------------------------------------------------------------------
+GETTERS AND SETTERS:- Getters and setters are methods used to control access to the attributes (variables) of a class. They are commonly used in object-oriented programming to enforce encapsulation and provide a controlled interface for interacting with the internal state of an object.
+
+1) Getter Method (Accessor Method):
+A getter method is used to retrieve the value of a private attribute.
+It allows external code to access the value of an attribute without directly manipulating it.
+Typically named with the prefix get_ followed by the attribute name.
+
+class Example:
+    def __init__(self):
+        self.__value = 0  # Private attribute
+
+    def get_value(self):  # Getter method
+        return self.__value
+
+obj = Example()
+result = obj.get_value()  # Accessing the private attribute using the getter method
+-------------------------------------
+2) Setter Method (Mutator Method):
+A setter method is used to modify the value of a private attribute.
+It allows external code to update the value of an attribute in a controlled way.
+Typically named with the prefix set_ followed by the attribute name.
+
+class Example:
+    def __init__(self):
+        self.__value = 0  # Private attribute
+
+    def set_value(self, new_value):  # Setter method
+        self.__value = new_value
+
+obj = Example()
+obj.set_value(42)  # Modifying the private attribute using the setter method
+-------------------------------------
+Using getters and setters helps in:
+Encapsulation: They allow the internal state of an object to be hidden from the outside world, ensuring that changes to the internal state are controlled.
+Validation: Setter methods can include validation checks to ensure that new values meet certain criteria before updating the attribute.
+Flexibility: They provide a way to change the internal implementation of a class without affecting the external code that uses the class.
+----------------------------------------------------------------------------------------------

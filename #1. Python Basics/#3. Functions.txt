@@ -1,0 +1,111 @@
+1) Regular Functions:
+Definition: A regular function is a named block of code that performs a specific task. Created using the def keyword.
+Syntax:
+def my_function(parameters):
+    # Function body
+    # Code here
+    return result
+
+Return: May return a value using the return statement.
+Execution: Executes and completes when called. State is not preserved between calls unless using external variables.
+Example:
+def add_numbers(x, y):
+    return x + y
+
+result = add_numbers(3, 4)
+print(result)  # Output: 7
+-------------------------------------------------------------------------------------------
+2) Generator Functions:
+Definition: A generator function is a special type of function that returns an iterator called a generator. Created using the def keyword with yield statements.
+Syntax:
+def my_generator(parameters):
+    # Generator body
+    # Code here
+    yield result
+
+Yield: Uses yield to produce a sequence of values one at a time. Pauses and resumes execution, preserving state between calls.
+Execution: Executes on demand and is lazy. Suitable for large datasets or infinite sequences.
+Example:
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+# Using the generator
+for num in countdown(5):
+    print(num)
+
+Generator Expression: Similar to a list comprehension but creates a generator.
+my_generator = (x**2 for x in range(5))
+-------------------------
+One of the key advantages of using generator functions in Python is that they can significantly reduce memory consumption compared to equivalent solutions using lists or other data structures. This is because generators produce values one at a time on demand and do not store the entire sequence in memory.
+Here are a few reasons why generators are memory-efficient:
+a) Lazy Evaluation: Generators use lazy evaluation, meaning they produce values on-the-fly as you iterate over them. This contrasts with creating a complete list, where all values are generated and stored in memory upfront.
+b) Iterative Generation: Values in a generator are generated iteratively, and each value is generated and processed individually. This is especially beneficial when dealing with large datasets or when you don't need all the values at once.
+c) No Preallocation: Unlike lists, generators don't preallocate memory for all the elements. Each element is generated when requested, leading to more efficient memory usage.
+-------------------------------------------------------------------------------------------
+3) LAMBDA FUNCTION:- A lambda function in Python is a concise way to create small, anonymous functions. It is often referred to as an "anonymous" or "lambda" function because it doesn't have a formal name like a regular function created using the def keyword. Lambda functions are useful when you need a simple function for a short period and don't want to formally define a full function using def.
+The basic syntax of a lambda function is as follows:
+
+lambda arguments: expression
+
+lambda: The keyword that signifies the creation of a lambda function.
+arguments: The input parameters the function takes (similar to the arguments of a regular function).
+expression: The operation or calculation the function performs. The result of this expression is the return value of the lambda function.
+Here's a simple example to illustrate the syntax and usage of a lambda function:
+
+# Regular function
+def square(x):
+    return x**2
+
+# Equivalent lambda function
+square_lambda = lambda x: x**2
+
+# Using the functions
+print(square(5))           # Output: 25
+print(square_lambda(5))    # Output: 25
+-------------------------------------------------------------------------------------------
+4) MAP, FILTER & REDUCE:- 
+
+a) MAP
+Purpose: Applies a given function to all items in an iterable (e.g., a list) and returns an iterator that produces the results.
+Syntax: map(function, iterable)
+Example: 
+numbers = [1, 2, 3, 4, 5]
+
+# Using map to square each element in the list
+squared_numbers = map(lambda x: x**2, numbers)
+result = list(squared_numbers)
+
+print(result)  # Output: [1, 4, 9, 16, 25]
+----------------------------------------------
+b) FILTER
+Purpose: Filters elements from an iterable based on whether the given function returns True or False.
+Syntax: filter(function, iterable)
+Example:
+numbers = [1, 2, 3, 4, 5]
+
+# Using filter to keep only even numbers
+even_numbers = filter(lambda x: x % 2 == 0, numbers)
+result = list(even_numbers)
+
+print(result)  # Output: [2, 4]
+----------------------------------------------
+c) REDUCE
+Purpose: Applies a binary function cumulatively to the items in an iterable to reduce the sequence to a single accumulated result.
+Syntax:
+from functools import reduce
+reduce(function, iterable[, initializer])
+
+Example:
+from functools import reduce
+
+numbers = [1, 2, 3, 4, 5]
+
+# Using reduce to calculate the product of all numbers
+product = reduce(lambda x, y: x * y, numbers)
+
+print(product)  # Output: 120
+-------------------------------------------------------------------------------------------
+
+

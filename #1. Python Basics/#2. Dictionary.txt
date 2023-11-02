@@ -1,0 +1,58 @@
+Dictionary in Python:
+Definition: A dictionary is a mutable, unordered collection of key-value pairs. Created using curly braces {} or the dict() constructor.
+
+Key-Value Pairs: Each element in a dictionary is a key-value pair, separated by a colon (:).
+
+Example: my_dict = {'name': 'John', 'age': 25, 'occupation': 'Engineer'}
+
+Operations:
+  Access Value: value = my_dict['name']
+  Modify Value: my_dict['age'] = 26
+  Add Key-Value Pair: my_dict['city'] = 'New York'
+  Remove Key-Value Pair: del my_dict['occupation']
+
+Common Characteristics:
+  Iterable: You can iterate over keys, values, or key-value pairs.
+  Dynamic: Can grow or shrink in size.
+  Heterogeneous: Keys and values can have different data types.
+----------------------------------------------------------------------------------------
+DICTIONARY METHODS
+
+# Creating a sample dictionary
+my_dict = {'name': 'John', 'age': 25, 'occupation': 'Engineer'}
+
+# clear(): Removes all items from the dictionary
+my_dict.clear()
+
+# copy(): Returns a shallow copy of the dictionary
+new_dict = my_dict.copy()
+
+# get(key[, default]): Returns the value for the specified key, with an optional default value
+value = my_dict.get('age', 0)
+
+# items(): Returns a view of the dictionary's key-value pairs as tuples
+key_value_pairs = my_dict.items()
+
+# keys(): Returns a view of the dictionary's keys
+keys = my_dict.keys()
+
+# values(): Returns a view of the dictionary's values
+values = my_dict.values()
+
+# pop(key[, default]): Removes and returns the value for the specified key, with an optional default value
+value = my_dict.pop('age', 0)
+
+# popitem(): Removes and returns an arbitrary key-value pair as a tuple
+key_value_pair = my_dict.popitem()
+
+# update(iterable): Updates the dictionary with elements from another iterable
+other_dict = {'city': 'New York', 'gender': 'Male'}
+my_dict.update(other_dict)
+
+# setdefault(key[, default]): Returns the value for the specified key, inserts the key with an optional default value if not found
+value = my_dict.setdefault('age', 0)
+
+# fromkeys(iterable[, value]): Creates a new dictionary with keys from the iterable and values set to the optional value
+keys = ['name', 'age', 'city']
+default_value = 'Unknown'
+new_dict = dict.fromkeys(keys, default_value)

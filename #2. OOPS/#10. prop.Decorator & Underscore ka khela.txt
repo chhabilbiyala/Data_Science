@@ -1,0 +1,95 @@
+In Python, the use of a single underscore (_) and double underscores (__) in variable and method names serves as a convention rather than a strict access control mechanism. These conventions are not enforced by the Python interpreter, but they are widely accepted and followed by the Python community.
+
+1) Single Underscore _ (Protected):
+By convention, a variable or method name prefixed with a single underscore is considered "protected."
+It signals to other developers that the variable or method is intended for internal use within the class or module and should not be accessed directly from outside the class or module.
+It's more of a suggestion to other developers to use the variable or method with caution.
+
+class MyClass:
+    def __init__(self):
+        self._protected_variable = 42
+
+    def _protected_method(self):
+        print("This is a protected method.")
+
+obj = MyClass()
+print(obj._protected_variable)  # Accessing a protected variable (not prohibited)
+obj._protected_method()         # Calling a protected method (not prohibited)
+
+While it's technically possible to access these "protected" members from outside the class, it's a signal to developers that these members are considered internal.
+----------------------------------------------------------------------
+2) Double Underscores __ (Private):
+A variable or method name prefixed with double underscores is considered "private."
+It suggests that the variable or method is intended to be used only within the class where it is defined, and not to be accessed directly from outside the class.
+The double underscores also lead to name mangling, which means the interpreter changes the name to include the class name, reducing the chance of accidental name clashes in subclasses.
+
+class MyClass:
+    def __init__(self):
+        self.__private_variable = 42
+
+    def __private_method(self):
+        print("This is a private method.")
+
+obj = MyClass()
+# Accessing a private variable or method directly would result in an AttributeError
+# print(obj.__private_variable)
+# obj.__private_method()
+-----------------
+Attempting to access a private variable or method directly from outside the class would result in an AttributeError. Instead, Python name mangling is used, and you can access these members using the mangled name (_ClassName__variable or ._ClassName__method()).
+Example:- 
+
+class MyClass:
+    def __init__(self):
+        self.__private_variable = 42
+
+    def __private_method(self):
+        print("This is a private method.")
+
+obj = MyClass()
+print(obj._MyClass__private_variable)  # Accessing a "private" variable using the mangled name
+-----------------
+ou can indeed access the "private" variable using the mangled name _MyClass__private_variable. This access method is allowed, and it's part of the Python language design. The double underscores primarily serve to avoid accidental name clashes in large projects rather than to provide strict access control.
+-----------------------------------------------------------------------------------------
+The property decorator is often used for accessing and controlling the behavior of private attributes in Python. Private attributes are typically marked with a double underscore (__) prefix in their names. By using the property decorator, you can create getter, setter & delete methods that allow controlled access to these private attributes.
+
+In the provided example, I am using the property decorator to create a getter method (course_price_access) for accessing a private attribute (__course_price). Additionally, you're using the @property.setter decorator to create a setter method (course_price_set) and the @property.deleter decorator to create a deleter method (delete_course_price). Let's break down each part:
+
+class pwskills:
+    def __init__(self, course_name, course_price):
+        # we can access it directly (bcoz no __)
+        self.course_name = course_name
+        # we cannot access it directly (because of __), but with property decorator, we can
+        self.__course_price = course_price
+    
+    @property
+    def course_price_access(self):
+        return self.__course_price
+    
+    @course_price_access.setter
+    def course_price_set(self, price):
+        if price <= 3500:
+            pass
+        else:
+            self.__course_price = price
+            
+    @course_price_access.deleter
+    def delete_course_price(self):
+        del self.__course_price
+
+# Creating an instance
+pw = pwskills("data science masters 2.0", "3500/-")
+
+# Accessing the private attribute using the getter method
+print(pw.course_price_access)
+---------------
+Getter Method (@property):
+The @property decorator is applied to the course_price_access method, turning it into a getter method.
+It allows you to access the private attribute __course_price using the syntax pw.course_price_access.
+
+Setter Method (@course_price_access.setter):
+The @course_price_access.setter decorator is applied to the course_price_set method, turning it into a setter method.
+It allows you to set the value of the private attribute __course_price using the syntax pw.course_price_access = new_price.
+
+Deleter Method (@course_price_access.deleter):
+The @course_price_access.deleter decorator is applied to the delete_course_price method, turning it into a deleter method.
+It allows you to delete the private attribute __course_price using the syntax del pw.course_price_access.

@@ -1,0 +1,48 @@
+In Python, class methods, static methods, and instance methods are three types of methods that serve different purposes and are used in different contexts. Here are the key differences between them:
+
+1) Instance Method:
+Definition: An instance method is a method that is bound to an instance of the class.
+First Parameter: It takes self as its first parameter, which represents the instance of the class.
+Access to Instance Attributes: Instance methods have access to instance-specific data and can modify the object's state.
+How to Define: They are defined without any decorators.
+Usage: Most commonly used type of method. Used when the method needs to interact with or modify instance-specific data.
+
+class MyClass:
+    def instance_method(self):
+        # Access instance-specific data using self
+        print("Instance Method")
+-----------------------------------------------------
+2) Class Method:
+Definition: A class method is a method that is bound to the class and not the instance.
+First Parameter: It takes cls as its first parameter, which represents the class itself.
+Access to Class Attributes: Class methods have access to class-level data but not to instance-specific data.
+How to Define: Decorated with @classmethod.
+Usage: Used when the method needs to perform operations related to the class but doesn't require access to instance-specific data.
+
+class MyClass:
+    class_variable = "Class Variable"
+
+    @classmethod
+    def class_method(cls):
+        # Access class-level data using cls
+        print(cls.class_variable)
+-----------------------------------------------------
+3) Static Method:
+Definition: A static method is a method that is bound to the class and not the instance.
+First Parameter: It doesn't have self or cls as its first parameter. It's a regular function that happens to live in a class body.
+Access to Class Attributes: Like class methods, static methods have access to class-level data but not to instance-specific data.
+How to Define: Decorated with @staticmethod.
+Usage: Used when the method doesn't require access to instance-specific or class-level data. It's often used for utility functions that are related to the class.
+
+class MyClass:
+    @staticmethod
+    def static_method():
+        print("Static Method")
+-----------------------------------------------------
+In summary:
+Instance methods are associated with instances, have access to instance-specific data, and are the most common type of method.
+Class methods are associated with the class, have access to class-level data, and are useful for operations related to the class.
+Static methods are also associated with the class, don't have access to instance-specific or class-level data, and are often used for utility functions.
+
+
+

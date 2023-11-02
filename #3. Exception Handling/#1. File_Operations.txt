@@ -1,0 +1,39 @@
+File operations in Python refer to the actions performed on files, such as reading from or writing to files. Python provides several built-in functions and methods to perform file operations. Here are some common file operations in Python:
+
+1) Opening a File: The open() function is used to open a file. It takes two arguments: the file name and the mode (e.g., 'r' for reading, 'w' for writing, 'a' for appending).
+
+# Opening a file for reading
+file = open('example.txt', 'r')
+-------------------------
+2) Reading from a File: The read() method reads the entire contents of the file, while readline() reads a single line.
+
+# Reading the entire content of the file
+content = file.read()
+
+# Reading a single line
+line = file.readline()
+-------------------------
+3) Writing to a File: The write() method is used to write content to a file. If the file is opened in write mode ('w'), it overwrites the existing content. If opened in append mode ('a'), it appends the content.
+
+# Writing to a file
+with open('example.txt', 'w') as file:
+    file.write('Hello, World!')
+-------------------------
+4) Closing a File: The close() method is used to close an open file. It's good practice to close a file after performing operations on it.
+
+# Closing the file
+file.close()
+-------------------------
+5) Appending to a File: If you want to add content to an existing file without overwriting, open it in append mode ('a').
+
+# Appending to a file
+with open('example.txt', 'a') as file:
+    file.write('\nAppended content')
+-------------------------
+6) Iterating Over Lines: You can iterate over the lines of a file using a for loop.
+
+# Iterating over lines of a file
+with open('example.txt', 'r') as file:
+    for line in file:
+        print(line)
+-------------------------

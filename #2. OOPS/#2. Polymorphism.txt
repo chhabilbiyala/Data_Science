@@ -1,0 +1,34 @@
+POLYMORPHISM:- Polymorphism is a fundamental concept in object-oriented programming that refers to the ability of a class to take on multiple forms. In Python, polymorphism allows objects of different types to be treated as objects of a common type, making it easier to write code that can work with a variety of objects.
+Simply, polymorphism in programming refers to the ability of different classes or objects to be treated as instances of a common type. It allows objects of various types to be used interchangeably, providing flexibility and enabling code to work with different objects in a unified way.
+
+Example:- 
+class Data_Science:
+    def syllabus(self):
+        print("This is my syllabus for data science") 
+
+class Web_Dev:
+    def syllabus(self):
+        print("This is my syllabus for web dev")
+
+class Class_Parser:
+    def parse_syllabus(self, class_objs):
+        for class_obj in class_objs:
+            class_obj().syllabus()
+
+# Creating instances of the classes
+data_science = Data_Science()
+web_dev = Web_Dev()
+
+# Creating a Class_Parser instance and parsing syllabus
+parser = Class_Parser()
+parser.parse_syllabus([data_science, web_dev])
+------------------
+In this code, I have implemented polymorphism using a common method name (syllabus) in two different classes (Data_Science and Web_Dev). The Class_Parser class then demonstrates polymorphism by iterating through a list of instances of these classes and calling the syllabus method on each instance.
+
+In the provided example:
+Both the Data_Science and Web_Dev classes have a method called syllabus.
+The Class_Parser class can work with instances of these classes without knowing their specific types.
+The syllabus method is polymorphic because it behaves differently based on the type of object it is called on.
+
+In essence, polymorphism simplifies code by allowing different classes to share a common interface (like a method name), and the actual behavior is determined at runtime based on the specific class or object being used.
+------------------------------------------------------------------------------
