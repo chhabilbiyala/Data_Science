@@ -1,0 +1,30 @@
+ The levels of measurement, also known as scales of measurement, describe the nature of the values assigned to variables. There are four main levels of measurement: nominal, ordinal, interval, and ratio.
+
+1. Nominal Scale Data:
+Characteristics: Categories with no inherent order or ranking. Data is labeled or named. No meaningful numerical relationship between categories.
+Examples:
+Colors (e.g., red, blue, green).
+Types of animals (e.g., cat, dog, bird).
+Gender (e.g., male, female).
+------------------------------------
+2. Ordinal Scale Data:
+Characteristics: Categories with a meaningful order or ranking. Intervals between categories may not be uniform. Differences in magnitude are not clearly defined.
+Examples:
+Educational levels (e.g., high school, bachelor's, master's).
+Movie ratings (e.g., 1 star, 2 stars, 3 stars).
+Customer satisfaction levels (e.g., low, medium, high).
+------------------------------------
+3. Interval Scale Data:
+Characteristics: Categories with a meaningful order. Intervals between values are uniform and measurable. Zero point is arbitrary (no true zero).
+Examples:
+Temperature in Celsius or Fahrenheit.
+IQ scores.
+Years (measuring the difference between years).
+------------------------------------
+4. Ratio Scale Data:
+Characteristics: Similar to interval scale but with a true zero point. Ratios between values are meaningful and can be calculated.Absolute zero indicates the absence of the variable.
+Examples:
+Height.
+Weight.
+Income.
+------------------------------------

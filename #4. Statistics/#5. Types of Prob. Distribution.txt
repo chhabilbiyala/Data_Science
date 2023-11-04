@@ -1,0 +1,92 @@
+1) Normal Distribution (Gaussian Distribution) - PDF:
+Definition: The normal distribution is a continuous probability distribution that is symmetric, bell-shaped, and characterized by its mean (μ) and standard deviation (σ). It is a type of continuous probability distribution for a real-valued random variable. Mean (μ) is the center of the distribution and Standard Deviation (σ) determines the spread. Widely used due to the Central Limit Theorem; many natural phenomena approximate a normal distribution.
+-------------
+1. Symmetry: Imagine a perfectly symmetric, bell-shaped curve. The peak of the curve is the mean, and it extends symmetrically on both sides. The distribution is perfectly balanced.
+2. Central Limit Theorem: Envision a scenario where you repeatedly take samples from any population, calculate the sample means, and plot them. As the sample size increases, the distribution of these sample means will approach a normal distribution, even if the original population is not normally distributed. Simply the thm says that the sampling distribution of the mean will always be normally distributed, as long as the sample is large enough. Regardless of wheather the population has normal, poisson, binomial or any other distrinution, the sampling distribution of the mean will always be normal.
+3. Mean, Median, Mode Alignment: Picture the mean, median, and mode all sitting at the center of the curve, perfectly aligned. This alignment happens because of the symmetry of the normal distribution.
+4. Standard Deviation Spread: Visualize the standard deviation controlling the spread of the distribution. A larger standard deviation results in a wider, more spread-out curve, while a smaller standard deviation results in a narrower, more concentrated curve.
+5. 68-95-99.7 Rule: Memorize the rule that approximately 68% of the data falls within one standard deviation of the mean, 95% within two standard deviations, and 99.7% within three standard deviations. This rule emphasizes the concentration of data around the mean.
+--------------
+Applications of Normal Distribution:
+Statistics and Hypothesis Testing: Many statistical methods assume normality, and hypothesis tests often involve comparing sample means using the normal distribution.
+Biological Measurements: Human characteristics like height, weight, and blood pressure often follow a normal distribution.
+Quality Control in Manufacturing: Measures of product quality, such as weight, length, and strength, often exhibit normal distribution patterns.
+Financial Markets: Stock prices, returns, and other financial metrics are often modeled using the normal distribution.
+IQ Scores: IQ scores are standardized to have a mean of 100 and a standard deviation of 15, fitting the normal distribution.
+Natural Phenomena: Many natural phenomena, such as the distribution of rainfall or the heights of a large population, approximate a normal distribution.
+---------------
+Standard Normal Distribution: The standard normal distribution is a special case of the normal distribution. It is a normal distribution with a mean (μ) of 0 and a standard deviation (σ) of 1. The random variable following this distribution is often denoted as Z.
+To convert a value from a normal distribution to a standard normal distribution, you use the Z-score formula. This process is known as standardization or normalization. It allows you to compare and analyze data points from different normal distributions by expressing them in terms of standard deviations from their respective means. The Z-score (or Z-statistic) is a measure of how many standard deviations a particular data point is from the mean of a distribution. It is calculated using the formula: Z = (X − μ) / σ
+where: X is the individual data point, μ is the mean of the distribution, σ is the standard deviation of the distribution.
+Steps for Standardizing:
+Calculate the Z-score using the formula.
+The resulting Z-score represents the position of the data point in terms of standard deviations from the mean.
+A Z-score of 0 indicates that the data point is exactly at the mean.
+A positive Z-score indicates that the data point is above the mean.
+A negative Z-score indicates that the data point is below the mean.
+
+Z-score table, is a mathematical table that provides probabilities associated with specific Z-scores in a standard normal distribution. Z-table is to calculate the area or probability under the standard normal distribution curve up to a certain Z-score. This is useful in understanding the likelihood of a random variable taking a value below or above a particular point in a standard normal distribution.
+--------------------------------------
+2) Bernoulli Distribution - PMF:
+Definition: The Bernoulli distribution models a random experiment with two possible outcomes, usually labeled as success (1) and failure (0), i.e the outcomes are binary. It is a discrete probability distribution of a random variable which takes the value 1 with probability P (0 ≤ P ≤ 1) and the value 0 with probability (Q = p - 1).Less formally, it can be thought of as a model for the set of possible outcomes of any single experiment that asks yes-no question.Foundation for binomial distribution; used for modeling binary outcomes.
+Examples:
+Tossing a coin (Heads as success, Tails as failure).
+Passing or failing a test (Pass as success, Fail as failure).
+
+Mean (Expected Value) of Bernoulli Distribution: Mean (μ) = E(X) = P
+The mean of a Bernoulli distribution is simply the probability of success.
+
+Median of Bernoulli Distribution: The median is the value that separates the higher half from the lower half of a data sample. In the case of a Bernoulli distribution, the median is 0.5.
+
+Variance of Bernoulli Distribution: Variance (σ2) = Var(X) = P(1−P).
+The variance of a Bernoulli distribution is given by the product of the probability of success (p) and the probability of failure (1−p).
+
+Standard Deviation of Bernoulli Distribution: The standard deviation is the square root of the variance.
+--------------------------------------
+3) Uniform Distribution:
+Definition: The uniform distribution is a continuous probability distribution where every value in the range is equally likely to occur.
+Useful in situations where all outcomes in a range are equally likely.
+
+a) Continuous Uniform Distribution or rectangular distribution (PDF):
+Definition: The continuous uniform distribution is a probability distribution that describes a continuous random variable where all intervals of the same length have an equal probability of occurring.The distribution describes an experiment where there is an arbitrary outcome that lies between certain bounds. The bounds are defined by the parameters (a & b), which are the minimum and maximum values.
+Probability Density Function (PDF): f(x)= 1 / (b -a), where a & b are the lower and upper bounds of the distribution.
+Key Points:
+  The probability density is constant within the interval [a,b].
+  The PDF is flat and equal for all values within the interval.
+  Outside the interval, the PDF is zero.
+Examples:- 
+Random Number Generator: Suppose you have a random number generator that produces values uniformly between 0 and 1. The continuous uniform distribution is a good model for the distribution of these generated values.
+Dart Throwing: Imagine throwing a dart at a circular dartboard where any point on the dartboard has an equal chance of being hit. The (x, y) coordinates of where the dart lands could be modeled by a continuous uniform distribution within the boundaries of the dartboard.
+Waiting for a Bus: If the time it takes for a bus to arrive at a bus stop is uniformly distributed between 10 and 20 minutes, the continuous uniform distribution could be used to model this waiting time.
+------------
+b) Discrete Uniform Distribution (PMF):
+Definition: The discrete uniform distribution is a probability distribution that describes a discrete random variable where each possible outcome has an equal probability of occurring. It is a symmetric probability distribution wherein a finite number of values are equally likely to be observed; every one of n values have equal probability 1/n. Another way of saying descrete probability distribution would be:- A known finite number of outcomes equally likely to happen.
+Probability Mass Function (PMF): P(X = k)= 1/n, where k is one of the possible outcomes, and n is the total number of possible outcomes.
+Key Points:
+  The probability of each outcome is the same.
+  The PMF assigns a positive probability to each possible value of the discrete random variable.
+Examples:- 
+Fair Die Roll: Rolling a fair six-sided die follows a discrete uniform distribution, where each of the six outcomes (1, 2, 3, 4, 5, 6) has an equal probability of 1/6.
+Deck of Cards: Drawing a single card from a standard deck of 52 cards follows a discrete uniform distribution. Each card has an equal probability of 1/52.
+Lottery Numbers: If you pick a number at random from a set of, say, 1 to 100 for a lottery, and each number is equally likely to be selected, it follows a discrete uniform distribution.
+--------------------------------------
+4) Poisson Distribution - PMF (i.e for discrete random variable):
+Definition: The Poisson distribution models the number of events that occur within a fixed interval of time or space. Used in scenarios where events happen independently with a known average rate. 
+Examples:- 
+Phone Calls at a Call Center: The number of phone calls received at a call center in a given minute, where calls are assumed to be independent events occurring randomly.
+Accidents at an Intersection: The number of accidents at a busy intersection in a day, assuming accidents happen independently.
+Email Arrivals: The number of emails received in an hour, assuming emails arrive independently.
+Arrival of Customers at a Service Counter: The number of customers arriving at a service counter in a given time period, assuming random and independent arrivals.
+Defects in a Manufacturing Process: The number of defects in a manufactured product, assuming defects occur independently.
+Website Hits: The number of hits a website receives in a specified time interval, assuming hits are independent events.
+
+Mean (Expected Value) of Poisson Distribution: Mean (μ) = E(X) = λ. The mean of a Poisson distribution is equal to its parameter λ, which represents the average rate of events occurring in the given interval.
+
+Variance of Poisson Distribution: Variance (σ2) = Var(X) = λ. The variance of a Poisson distribution is also equal to its parameter λ. This property is characteristic of the Poisson distribution, and it implies that both the mean and variance are equal.
+--------------------------------------
+5) Log Normal Distribution - PDF:
+Definition: The log-normal distribution describes a random variable whose logarithm is normally distributed. Used to model variables that are the product of many independent, identically distributed variables. 
+--------------------------------------
+6) Binomial Distribution - PMF:
+Definition: The binomial distribution models the number of successes in a fixed number of independent Bernoulli trials. Frequently used in statistical experiments with two possible outcomes.
+--------------------------------------

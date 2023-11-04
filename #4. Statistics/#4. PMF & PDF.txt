@@ -1,0 +1,26 @@
+1) Probability Mass Function (PMF):
+Definition: The Probability Mass Function (PMF) is used for "discrete random variables." It gives the probability that a discrete (whole Number) random variable is exactly equal to a certain value.
+Mathematical Representation:For a discrete random variable X, the PMF is denoted as P(X=x), where x is a specific value that X can take.
+Example: If X represents the outcome of rolling a fair six-sided die, the PMF would give the probability of getting each number 
+(1, 2, 3, 4, 5, 6). i.e the probability will be 1/6.
+-----------------------------------------
+2) Probability Density Function (PDF):
+Definition: The Probability Density Function (PDF) is used for "continuous random variables." It gives the probability density at a particular value rather than the probability of a specific value. 
+Mathematical Representation: For a continuous random variable X, the PDF is denoted as f(x). The probability of X falling in a particular interval [a,b] is given by the integral of the PDF over that interval.
+the probability density function (PDF) is related to the cumulative distribution function (CDF) through differentiation. Specifically, the PDF is often obtained by taking the derivative of the CDF. In other words, the PDF represents the rate at which the cumulative probability is changing with respect to the variable x. Conversely, if you have the PDF and want to obtain the CDF, you integrate the PDF. 
+Example: If X represents the height of individuals in a population, the PDF gives the probability density at a specific height value.
+-----------------------------------------
+3) Cumulative Distribution Function (CDF):
+Definition:The Cumulative Distribution Function (CDF) gives the probability that a random variable X takes a value less than or equal x.
+Mathematical Representation:For both discrete and continuous random variables, the CDF is denoted as F(x), where F(x) = P(X ≤ x).
+-----------------------------------------
+Relationship with PMF and PDF:For discrete random variables, the CDF is obtained by summing the probabilities from the PMF.
+For continuous random variables, the CDF is obtained by integrating the PDF.
+Example: If X represents the number of heads in three coin flips, the CDF would give the probability of getting 0, 1, 2, or 3 heads.
+-----------------------------------------
+Use in Data Science:
+1. Describing Random Variables: PMFs, PDFs, and CDFs provide a complete description of the behavior of random variables, aiding in understanding their characteristics.
+2. Probability Calculations: These functions are fundamental for calculating probabilities associated with specific values or ranges of values of random variables.
+3. Model Evaluation: In statistics and machine learning, understanding and modeling the probability distribution of data is crucial for model evaluation and decision-making.
+4. Hypothesis Testing: PMFs, PDFs, and CDFs play a role in statistical hypothesis testing, helping determine the likelihood of observing certain outcomes.
+5. Simulation: They are used in simulating and generating random samples that mimic real-world scenarios.

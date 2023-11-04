@@ -1,0 +1,27 @@
+1) Quantitative Data: Quantitative data involves numerical values and can be either discrete or continuous.
+a) Discrete Data: Discrete data consists of distinct, separate values. It usually involves counting and is often represented by whole numbers.
+Examples:
+Number of students in a classroom.
+Number of cars in a parking lot.
+Count of books on a shelf.
+Number of goals scored in a soccer match.
+
+b) Continuous Data: Continuous data can take any value within a given range. It is not restricted to whole numbers and often involves measurement.
+Examples:
+Height of individuals.
+Weight of objects.
+Temperature in degrees Celsius.
+Time taken to complete a task.
+---------------------------------------------------------------------------------
+2) Qualitative Data: Qualitative data involves non-numerical values and can be either nominal or ordinal.
+a) Nominal Data: Nominal data represents categories with no inherent order or ranking. It involves labeling or naming attributes.
+Examples:
+Types of fruits (e.g., apple, banana, orange).
+Colors of cars (e.g., red, blue, green).
+Types of animals (e.g., cat, dog, bird).
+
+b) Ordinal Data: Ordinal data represents categories with a meaningful order or ranking. The intervals between values are not necessarily uniform.
+Examples:
+Educational levels (e.g., high school, bachelor's, master's).
+Movie ratings (e.g., 1 star, 2 stars, 3 stars).
+Customer satisfaction levels (e.g., low, medium, high).
