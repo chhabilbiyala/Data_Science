@@ -1,0 +1,44 @@
+Feature Extraction: Feature extraction is the process of transforming raw data into a reduced representation, typically with the goal of preserving relevant information while reducing dimensionality. It is a crucial step in data preprocessing for machine learning. Here are some common techniques:
+
+1) Feature Scaling:
+Purpose: To bring all features to a similar scale. It is important for algorithms sensitive to the magnitude of features, such as gradient descent-based optimization algorithms.
+
+Methods:
+a) Min-Max Scaling (Normalization): Scales the values to a specific range, often [0, 1]. Normalization is done to scale features in a dataset to a similar range, typically between 0 and 1, ensuring that no single feature dominates the others; it is beneficial because it helps algorithms converge faster, prevents undue influence from features with large scales, and improves the overall stability and performance of machine learning models.
+Formula: X-normalized = X − min(X) / max(X)−min(X)
+-------------------------------------
+b) Standardization (Z-score Scaling): Scales the values to have zero mean and unit variance.
+Formula: X-standardized = X − mean(X) / std(X)
+Why Z-Score Scaling: Z-score scaling makes different features directly comparable by bringing them to a common scale. Many machine learning algorithms are sensitive to the scale of the features. Standardization helps algorithms converge faster and perform better. It facilitates the interpretation of coefficients in linear models by putting features on a common scale.
+-------------------------------------
+c) Unit vector feature scaling, also known as vector normalization, is a feature scaling method that transforms the data in such a way that each feature vector has a length of 1. The process involves dividing each data point by the Euclidean norm (length) of its feature vector.
+Calculate the Euclidean Norm: For each data point (feature vector), calculate the Euclidean norm, which is the square root of the sum of squared values of its features.
+Divide by the Euclidean Norm: Divide each feature in the data point by its Euclidean norm.
+The resulting vectors, often referred to as unit vectors, have a length of 1 and point in the same direction as the original vectors.
+​-------------------------------------
+d) Robust Scaling: Scales using the median and interquartile range, making it robust to outliers.
+----------------------------------------------------------------------------------
+2) Principal Component Analysis (PCA): PCA is a dimensionality reduction technique that identifies the most important features and transforms the data into a new coordinate system.
+
+a) Identification of Principal Components: PCA starts by identifying the principal components, which are orthogonal vectors indicating the directions of maximum variance in the original feature space.
+b) Ranking by Variance: Principal components are ranked in order of the amount of variance they capture in the data.
+Projection Onto Principal Components: When reducing dimensionality, you select a subset of the principal components.
+For example, when reducing from 2D to 1D, you choose the first principal component.
+c) Projection Process: Each data point is projected onto the selected principal component(s). This involves finding the orthogonal projection of the data point onto the line (or subspace) defined by the chosen principal component(s).
+d) Variance Preservation: The goal is to retain as much variance as possible in the data while reducing dimensionality.
+The first principal component captures the most variance, and subsequent components capture less.
+e) Dimensionality Reduction: After the projection, you obtain a lower-dimensional representation of the data, effectively reducing the number of features.
+f) Interpretability and Visualization: PCA facilitates interpretability by highlighting the most important directions in the data.
+It is often used for visualization, where complex relationships in high-dimensional data can be represented in a more manageable form.
+
+Steps:
+Standardize the Data: Ensure that the features have zero mean and unit variance.
+Calculate Covariance Matrix: Obtain the covariance matrix of the standardized data.
+Compute Eigenvectors and Eigenvalues: Eigenvectors represent the directions of maximum variance, and eigenvalues indicate the magnitude of variance along each eigenvector.
+Select Principal Components: Choose the top k eigenvectors based on the eigenvalues to form a transformation matrix.
+Transform Data: Multiply the original data by the transformation matrix to obtain the reduced-dimensional representation.
+
+Advantages:
+Reduces dimensionality.
+Captures the most significant variability in the data.
+----------------------------------------------------------------------------------

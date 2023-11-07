@@ -1,0 +1,30 @@
+Data Encoding: Data encoding is the process of converting categorical data into a numerical format that can be used by machine learning algorithms. Categorical data represents labels or categories and is non-numeric in nature. Most machine learning algorithms require numerical input, so encoding is necessary to transform categorical features into a suitable format.
+
+Types of Data Encoding:
+1) Nominal/One-Hot Encoding (OHE):
+Description: Converts each category into a binary vector of size equal to the number of categories. Only one element in the vector is "1," indicating the presence of the category, while others are "0."
+Example: If the original feature has categories "Red," "Green," and "Blue," OHE would represent them as (1, 0, 0), (0, 1, 0), and 
+(0, 0, 1) respectively.
+
+Disadvantages:- 
+a) High Dimensionality: OHE creates a binary vector for each category, leading to a significant increase in the number of features.
+This high dimensionality can be computationally expensive and may lead to the "curse of dimensionality."
+b) Collinearity Issues: The created binary vectors are highly correlated (collinear) because only one element in each vector is active.
+Collinearity can cause issues in some machine learning algorithms that assume independence among features.
+c) Sparse Matrix: The resulting matrix after OHE is often sparse, with many zero values. Sparse matrices can consume more memory compared to dense matrices, and some algorithms might not perform efficiently with sparse data.
+d) Interpretability Challenges: The interpretation of feature importance becomes more complex with a large number of one-hot encoded features. Understanding the significance of individual categories may be challenging.
+--------------------------------------
+2) Ordinal and Label Encoding:
+Ordinal Encoding: Assigns numerical values to categories based on their order or rank. Useful when categories have a meaningful order.
+Label Encoding: Assigns a unique integer to each category. The integer values are assigned based on the order in which the categories appear.
+Example: If categories are "Low," "Medium," and "High," ordinal encoding might use (1, 2, 3), while label encoding might use (0, 1, 2).
+--------------------------------------
+3) Target Guided Ordinal Encoding:
+Description: Assigns ordinal labels to categories "based on their relationship with the target variable." Categories are ordered according to their mean or median target value.
+Example: If encoding a feature with categories "A," "B," and "C," the order might be determined by the mean or median target value for each category.
+--------------------------------------
+Purpose of Data Encoding:
+Facilitates the use of categorical data in machine learning models.
+Enables algorithms that require numerical input to process categorical features.
+Preserves the meaningful information in ordinal features.
+Allows for efficient representation and manipulation of data in a format suitable for algorithms.

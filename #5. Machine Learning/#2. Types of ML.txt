@@ -1,0 +1,28 @@
+1) Supervised Machine Learning (Supervised ML):
+Definition: In supervised learning, the algorithm is trained on a labeled dataset, where the input data is paired with the corresponding output. The goal is for the algorithm to learn the mapping from inputs to outputs so that it can make accurate predictions on new, unseen data.
+Example:
+Task: Predicting house prices based on features like size, location, and number of bedrooms.
+Training Data: Historical data with house features and actual sale prices.
+Algorithm Outcome: The model can predict the price of a new house given its features.
+----------------------------------------------------
+2) Unsupervised Machine Learning (Unsupervised ML):
+Definition: Unsupervised learning involves working with unlabeled data, where the algorithm tries to find patterns, relationships, or structures within the data without explicit guidance on the output. Unsupervised Machine Learning is like letting a computer explore and find patterns in data without telling it what to look for. Imagine giving the computer a bunch of pictures without saying what's in them. The computer figures out on its own how to group similar pictures or discover hidden structures, helping us understand the underlying relationships in the data. It's about letting the machine learn and make sense of information without specific instructions.
+Example:
+Task: Clustering similar customer behavior for targeted marketing.
+Data: Customer purchase history without labels.
+Algorithm Outcome: The model groups customers with similar purchasing habits, revealing segments.
+----------------------------------------------------
+3) Semi-Supervised Machine Learning (Semi-Supervised ML):
+Definition: Semi-supervised learning combines elements of both supervised and unsupervised learning. It typically involves a small amount of labeled data and a larger amount of unlabeled data. The algorithm leverages the labeled data to guide its learning on the unlabeled data. Semi-Supervised Machine Learning is a bit like teamwork between a teacher and a learner. Imagine having a few examples of labeled data (like pictures with captions), and lots of other unlabeled ones. The computer learns from the labeled ones and tries to apply what it learned to the unlabeled ones. It's like having a few answers to guide the learning process, making it more efficient, especially when getting labeled data is tough.
+Example:
+Task: Email spam detection.
+Data: A small set of labeled emails (spam or not spam) and a larger set of unlabeled emails.
+Algorithm Outcome: The model uses the labeled data to identify patterns in the unlabeled data and improve spam detection.
+----------------------------------------------------
+4) Reinforcement Learning (Reinforcement ML):
+Definition: Reinforcement learning involves an agent learning how to behave in an environment by performing actions and receiving feedback in the form of rewards or penalties. The agent aims to maximize cumulative rewards over time. Reinforcement Learning is like teaching a computer to play and learn from a game. The computer takes actions in the game, gets feedback in the form of rewards or penalties, and learns to make better decisions to get more rewards. It's like coaching the computer to figure out the best strategies by trial and error, aiming to maximize its overall success in the game.
+Example:
+Task: Training a computer to play a game.
+Process: The agent takes actions in the game, receives rewards or penalties based on its performance, and learns to make better decisions to maximize future rewards.
+Outcome: The model becomes skilled at playing the game through trial and error.
+----------------------------------------------------

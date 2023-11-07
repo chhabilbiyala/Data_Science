@@ -1,0 +1,9 @@
+Feature Selection: Feature selection involves choosing a subset of relevant features from the original set. It aims to improve model performance and reduce overfitting.
+
+Methods:
+a) Filter Method: Filters features based on statistical properties without involving machine learning algorithms.
+Common metrics: correlation, chi-squared test, information gain.
+b) Wrapper Method: Employs a specific machine learning algorithm to evaluate the performance of different feature subsets.
+Examples include forward selection, backward elimination, and recursive feature elimination (RFE).
+c) Embedded Method: Feature selection is embedded within the model training process.
+Examples include LASSO (L1 regularization) and decision tree-based methods.

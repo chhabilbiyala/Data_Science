@@ -1,0 +1,25 @@
+1) Artificial Intelligence (AI):
+Definition: AI refers to the simulation of human intelligence in machines that are programmed to think and learn. It encompasses a wide range of technologies and applications, enabling machines to perform tasks that typically require human intelligence. AI aims to create machines that can perform tasks that typically require human intelligence, such as problem-solving, speech recognition, and decision-making. It encompasses narrow AI (specific task-oriented) and general AI (human-like capabilities).
+
+2) Machine Learning (ML):
+Definition: ML is a subset of AI that focuses on the development of algorithms and statistical models that enable computers to perform tasks without explicit programming. ML systems learn and improve from experience or data. ML focuses on developing algorithms that enable computers to learn and make predictions or decisions based on data. It includes supervised learning (using labeled data), unsupervised learning (finding patterns in unlabeled data), and reinforcement learning (learning through trial and error).
+
+3) Deep Learning:
+Definition: Deep Learning is a specialized subset of ML that involves neural networks with multiple layers (deep neural networks). These deep architectures can automatically learn hierarchical representations of data and are particularly effective in tasks such as image and speech recognition. Deep Learning is a subset of ML that employs deep neural networks with multiple layers to automatically learn intricate representations of data. It excels in tasks like image and speech recognition, natural language processing, and has been particularly impactful in recent advancements.
+
+4) Data Science:
+Definition: Data Science involves extracting insights and knowledge from data through various methods, including statistics, machine learning, and domain expertise. It encompasses the entire data lifecycle, from data collection and cleaning to analysis and interpretation. Data Science involves collecting, processing, analyzing, and interpreting large volumes of data to extract meaningful insights. It combines skills from statistics, computer science, and domain knowledge to uncover patterns, make predictions, and support decision-making.
+
+5) Computer Vision:
+Definition: Computer Vision is a field of AI and computer science that focuses on enabling machines to interpret and understand visual information from the world. It involves tasks such as image recognition, object detection, and image generation. Computer Vision focuses on enabling machines to interpret and understand visual information. It includes tasks such as image recognition, object detection, and video analysis. Applications range from facial recognition to self-driving cars, where machines make sense of the visual world.
+
+In summary:
+AI is the overarching concept of machines simulating human intelligence.
+ML is a subset of AI that involves machines learning from data.
+Deep Learning is a specialized form of ML using deep neural networks.
+Data Science is the interdisciplinary field focused on extracting insights from data.
+Computer Vision is a specific application of AI that deals with enabling machines to interpret visual information.
+
+
+
+

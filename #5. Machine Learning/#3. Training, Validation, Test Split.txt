@@ -1,0 +1,34 @@
+Training, Validation, Test Split:
+Imagine you have a basket of fruits, and you want to teach a friend to recognize them. You decide to split the fruits into three groups:
+
+Training Set (Teaching Basket): This is the basket you use to teach your friend. It has a variety of fruits, and you show your friend each fruit along with its name. The friend learns from these examples.
+
+Validation Set (Practice Basket): After your friend has learned from the teaching basket, you give them a new basket with some fruits. These are fruits they haven't seen before. Your friend tries to name them based on what they learned. This helps you see how well they're doing without using the teaching set.
+
+Test Set (Exam Basket): Finally, you have another basket with more new fruits. This basket is like an exam. Your friend tries to name these fruits, and you see how well they can generalize what they learned to completely new examples.
+In the same way, in machine learning:
+---------------------------------------------------------------
+Training Set: This is used to train the model, showing it examples and letting it learn from them.
+Validation Set: This is used to fine-tune the model and make sure it's learning well without looking at the answers. It's like practice.
+Test Set: This is the final exam for the model. It contains completely new examples to see how well the model can generalize what it learned.
+----------------------------------------------------------------
+More Detailed Explanation:
+Training Set:
+Purpose: Used to train the machine learning model.
+Composition: Contains a large portion of the dataset (e.g., 70-80%).
+Usage: The model learns patterns, relationships, and features from this set.
+
+Validation Set:
+Purpose: Used to fine-tune the model's parameters and avoid overfitting.
+Composition: Smaller than the training set (e.g., 10-15%).
+Usage: The model is adjusted based on performance on this set. It helps ensure the model generalizes well to new, unseen data.
+
+Test Set:
+Purpose: Used to evaluate the final performance of the trained model.
+Composition: Another portion of the dataset not used in training or validation (e.g., 10-15%).
+Usage: The model makes predictions on this set, and its accuracy, precision, recall, or other metrics are assessed. It gives an unbiased estimate of the model's performance on new data.
+This separation helps ensure that the model learns effectively, generalizes well, and can be trusted to make accurate predictions on new, unseen data.
+
+
+
+

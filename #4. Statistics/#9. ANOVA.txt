@@ -7,9 +7,9 @@ Key Concepts:
 2) Alternative Hypothesis (H1): At least one group mean is different from the others.
 3) Variability: ANOVA divides the total variability in the data into two components: variability between groups and variability within groups.
 4) Test Statistic (F-Statistic): The F-statistic is calculated by taking the ratio of the variability between groups to the variability within groups.
-F = Between-group variability / Within-group variability
-5) Degrees of Freedom: ANOVA involves two degrees of freedom: between-group degrees of freedom and within-group degrees of freedom.
-6) P-Value: The p-value associated with the F-statistic is compared to a significance level (e.g., 0.05) to determine whether to reject the null hypothesis.
+F = Between-group variability / Within-group variability. (for a comparison between two groups).
+5) Comparing to Critical Value: The calculated F-statistic is then compared to a critical value from the F-distribution table. If the calculated F-statistic is greater than the critical value, you might reject the null hypothesis, suggesting that the variances are significantly different.
+6) Significance Level (Alpha): The decision to reject or fail to reject the null hypothesis depends on the chosen significance level (often 0.05 or 5%). If the p-value associated with the F-statistic is less than the significance level, you reject the null hypothesis.
 -------------------------------------------
 Types of ANOVA:
 1) One-Way ANOVA: Used when comparing means of more than two independent groups. One factpr with atleast two levels and these levels are independent.
@@ -76,7 +76,7 @@ Example Scenario: Suppose you want to test whether there are differences in the 
 
 Hypotheses:
 H0 = μa = μb = μc
-H1 : atlest one μi is different.
+H1 : atleast one μi is different.
 
 STEPS:- 
 Formulate hypotheses.
@@ -85,6 +85,25 @@ Calculate the mean score for each method.
 Use ANOVA to test the hypotheses.
 Compare the p-value to the significance level (e.g., 0.05).
 If p-value < 0.05, reject H0 and conclude there are significant differences.
+-----------------------------------------------------------------------------------------
+The F-distribution, also known as the Fisher-Snedecor distribution, is a probability distribution that arises in the context of statistical hypothesis testing. The F-distribution is used specifically in the F-test, also known as the variance ratio test, which compares the variances of two samples.
+The F-test is commonly used in analysis of variance (ANOVA) and regression analysis to assess whether the variances of two or more groups are equal. The test involves comparing the ratio of variances between two groups to a critical value obtained from the F-distribution.
+Here's a brief explanation of the F-distribution and how it relates to the F-test:
+
+1) Probability Distribution (F-distribution): The F-distribution is a continuous probability distribution that is positively skewed. It is characterized by two degrees of freedom parameters: degrees of freedom for the numerator (associated with the variance of one group) and degrees of freedom for the denominator (associated with the variance of another group). The shape of the distribution depends on these degrees of freedom.
+2) F-Test (Variance Ratio Test): The F-test is used to compare the variances of two or more groups to determine whether they are significantly different. The test involves calculating the ratio of the variances (mean square of one group divided by the mean square of another group) and comparing it to a critical value from the F-distribution.
+The null hypothesis typically assumes that the variances are equal, and the alternative hypothesis posits that the variances are not equal.
+3) ANOVA (Analysis of Variance): In the context of ANOVA, the F-test is often used to compare the variability between groups (explained variance) to the variability within groups (unexplained variance).
+ANOVA can involve comparing variances across multiple groups simultaneously, and the F-test helps determine whether there are significant differences in variances.
+
+The formula for the F-statistic in the context of comparing two variances is:
+F= Variance of Group 2 / Variance of Group 1
+​
+The critical value for the F-test depends on the significance level (alpha) chosen for the test and the degrees of freedom associated with the numerator and denominator.
+
+
+
+
 
 
 

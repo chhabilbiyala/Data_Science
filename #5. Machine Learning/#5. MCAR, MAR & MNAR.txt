@@ -1,0 +1,44 @@
+Types of Missing Data:
+1. MCAR (Missing Completely At Random):
+Description: The missingness of data is completely random, and unrelated to any observed or unobserved variables.
+Example: A survey where participants forget to fill in some answers because of unrelated factors, like a distraction.
+-------------------------------
+2. MAR (Missing At Random):
+Description: The missingness is related to observed data but not to the missing values themselves. In other words, the probability of missingness depends on the values of other observed variables.
+Example: In a health survey, men might be less likely to report their weight than women, but this is related to gender (an observed variable).
+-------------------------------
+3. MNAR (Missing Not At Random):
+Description: The missingness is related to the values of the missing data itself, even after considering observed variables.
+Example: In a survey about income, high earners might be less likely to disclose their income, and this tendency is related to the income itself.
+---------------------------------------------------------------------------
+Handling Missing Values:
+**1. Imputation:
+Description: Imputation involves filling in missing values with estimated or predicted values.
+Methods:
+Mean/Median (if outliers present) Imputation: Replace missing values with the mean or median of the observed values.
+Regression Imputation: Predict missing values using regression models based on other observed variables.
+k-Nearest Neighbors (KNN) Imputation: Use the values of the nearest neighbors to estimate missing values.
+-------------------------------
+**2. Deletion:
+Description: Removing instances with missing values or entire variables with a high percentage of missingness.
+Methods:
+Listwise Deletion: Remove entire rows with missing values.
+Pairwise Deletion: Analyze only the variables for which data are present.
+-------------------------------
+**3. Advanced Techniques:
+Description: More sophisticated methods that consider patterns in the data.
+Methods:
+Multiple Imputation: Generates multiple imputed datasets and combines results to account for uncertainty.
+Deep Learning Models: Can be used to predict missing values based on other variables.
+-------------------------------
+**4. Handling Categorical Data:
+Description: Specific approaches for dealing with missing values in categorical variables.
+Methods:
+Mode Imputation: Replace missing categorical values with the mode (most frequent category).
+Create a New Category: Treat missing values as a separate category.
+-------------------------------
+Choosing the appropriate method depends on the nature of the missing data and the goals of the analysis. It's important to understand the type of missingness and use methods that are suitable for the specific situation.
+
+
+
+

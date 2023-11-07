@@ -1,0 +1,72 @@
+Handling outliers is an important step in data preprocessing to ensure that the presence of extreme values does not unduly influence the analysis or machine learning models. Here's an example of how to handle outliers in a list of marks using Python:
+
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Generate a list of marks with outliers
+marks = [65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 150, 160]
+
+# Convert the list to a Pandas DataFrame
+df = pd.DataFrame({'Marks': marks})
+
+# Visualize the distribution using a box plot
+plt.figure(figsize=(8, 6))
+sns.boxplot(x='Marks', data=df)
+plt.title('Box Plot of Marks (with Outliers)')
+plt.show()
+
+In this example, the box plot visually represents the distribution of the marks, and you can observe the presence of outliers.
+--------------------------------------------------------------------------------------------------------
+Handling Outliers:
+1. Z-Score Method: Identify outliers based on their z-scores. Z-score represents how many standard deviations a data point is from the mean.
+
+from scipy.stats import zscore
+
+# Calculate z-scores
+z_scores = np.abs(zscore(df['Marks']))
+
+# Define a threshold (e.g., 3 standard deviations)
+threshold = 3
+
+# Identify outliers
+outliers_zscore = np.where(z_scores > threshold)[0]
+
+# Remove outliers
+df_no_outliers_zscore = df.drop(outliers_zscore)
+
+# Visualize the distribution without outliers
+plt.figure(figsize=(8, 6))
+sns.boxplot(x='Marks', data=df_no_outliers_zscore)
+plt.title('Box Plot of Marks (without Outliers - Z-Score Method)')
+plt.show()
+-----------------------------------------------------------
+2. Interquartile Range (IQR) Method: Identify outliers based on the IQR. IQR is the range between the first quartile (25th percentile) and the third quartile (75th percentile).
+
+# Calculate IQR
+Q1 = df['Marks'].quantile(0.25)
+Q3 = df['Marks'].quantile(0.75)
+IQR = Q3 - Q1
+
+# Define upper and lower bounds
+lower_bound = Q1 - 1.5 * IQR
+upper_bound = Q3 + 1.5 * IQR
+
+# Identify outliers
+outliers_iqr = np.where((df['Marks'] < lower_bound) | (df['Marks'] > upper_bound))[0]
+
+# Remove outliers
+df_no_outliers_iqr = df.drop(outliers_iqr)
+
+# Visualize the distribution without outliers
+plt.figure(figsize=(8, 6))
+sns.boxplot(x='Marks', data=df_no_outliers_iqr)
+plt.title('Box Plot of Marks (without Outliers - IQR Method)')
+plt.show()
+
+
+
+
+
+
