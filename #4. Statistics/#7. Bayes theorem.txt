@@ -1,0 +1,21 @@
+Bayes' Theorem:
+Formula: P(A∣B)= [P(A) * P(B∣A)] / P(B) 
+​Components:
+P(A∣B): Probability of event A given that event B has occurred.
+P(B∣A): Probability of event B given that event A has occurred.
+P(A) and P(B): Marginal probabilities of events A and B, respectively.
+
+Scenario: Consider two events, A and B.
+Independent Events: If events A and B are independent, the occurrence of one does not affect the other. P(A∣B)=P(A), and P(B∣A)=P(B).
+Dependent Events: If events A and B are dependent, the occurrence of one affects the probability of the other.
+Bayes' Theorem helps calculate the probability of one event given the occurrence of the other.
+
+Importance in Machine Learning:
+1) Naive Bayes Classifier: Bayes' Theorem is a fundamental component of the Naive Bayes classifier, a popular algorithm for classification tasks. It's particularly useful in natural language processing and spam filtering.
+2) Probabilistic Inference: Bayes' Theorem enables probabilistic inference. In machine learning, it's crucial to estimate probabilities and make predictions based on observed data.
+3) Updating Prior Knowledge: In Bayesian statistics, prior knowledge is updated with new evidence to obtain posterior knowledge. This is vital in situations with limited data.
+4) Handling Uncertainty: Machine learning models often deal with uncertainty. Bayes' Theorem provides a principled way to update beliefs in the face of uncertainty.
+5) Medical Diagnosis:Bayes' Theorem is applied in medical diagnosis where the probability of having a disease is updated based on test results and prior probabilities.
+6) Spam Detection: In spam filtering, Bayes' Theorem is used to update the probability of an email being spam given certain keywords or features.
+7) Pattern Recognition: In pattern recognition, Bayes' Theorem helps in updating the probability of a certain class given observed features.
+Handling Imbalanced Datasets: Bayes Theorem provides a way to deal with imbalanced datasets by taking prior probabilities into account.

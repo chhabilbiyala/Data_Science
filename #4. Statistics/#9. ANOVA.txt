@@ -1,0 +1,91 @@
+ANOVA (Analysis of Variance) in Data Science:
+--------------------------------------------
+Introduction: ANOVA is a statistical method used to analyze the differences among group means in a sample. It assesses whether the variability in the data is due to the actual differences in group means or if it's simply the result of random chance.
+
+Key Concepts:
+1) Null Hypothesis (H0): There is no significant difference among the group means.
+2) Alternative Hypothesis (H1): At least one group mean is different from the others.
+3) Variability: ANOVA divides the total variability in the data into two components: variability between groups and variability within groups.
+4) Test Statistic (F-Statistic): The F-statistic is calculated by taking the ratio of the variability between groups to the variability within groups.
+F = Between-group variability / Within-group variability
+5) Degrees of Freedom: ANOVA involves two degrees of freedom: between-group degrees of freedom and within-group degrees of freedom.
+6) P-Value: The p-value associated with the F-statistic is compared to a significance level (e.g., 0.05) to determine whether to reject the null hypothesis.
+-------------------------------------------
+Types of ANOVA:
+1) One-Way ANOVA: Used when comparing means of more than two independent groups. One factpr with atleast two levels and these levels are independent.
+Example: Comparing the average scores of students from different schools.
+2) Repeated Measures ANOVA: Used when measurements are taken on the same set of subjects over multiple time points or conditions. One factor with atleast two levels, but these levels are dependent.
+Example: Assessing the impact of a drug on blood pressure over time for the same individuals.
+3) Two-Way ANOVA or Factorial ANOVA: Extends ANOVA to include two independent variables. Two or more factors (each with atlest two levels) and levels can be either independent or dependent.
+Example: Evaluating the effects of both diet and exercise on weight loss.
+ ------------------------------------------
+Assumptions of ANOVA:
+1) Normality of sampling distribution of means: The data within each group should follow a normal distribution.
+2) Homogeneity of Variances: Variances across groups should be approximately equal. 
+3) Absence of outliers:- Outlying score need to be removed from the dataset.
+4) Independence: Observations within each group should be independent.
+------------------------------------------- 
+Example Scenario: Suppose we want to test whether the average scores of students differ significantly among three teaching methods: Method A, Method B, and Method C.
+Data: Scores for each method:
+
+Method A: [80, 85, 88, 75, 78]
+Method B: [90, 92, 88, 85, 80]
+Method C: [75, 78, 80, 82, 85]
+
+Null Hypothesis (H0): The mean scores for all three teaching methods are equal.
+Alternative Hypothesis (H1): At least one teaching method has a different mean score.
+ANOVA Analysis: Perform a one-way ANOVA test, calculate the F-statistic, and compare the p-value to the significance level.
+----------------------------
+import scipy.stats as stats
+
+# Example data
+method_a = [80, 85, 88, 75, 78]
+method_b = [90, 92, 88, 85, 80]
+method_c = [75, 78, 80, 82, 85]
+
+# Perform one-way ANOVA
+f_statistic, p_value = stats.f_oneway(method_a, method_b, method_c)
+
+# Print results
+print(f"F-Statistic: {f_statistic}")
+print(f"P-Value: {p_value}")
+
+# Interpret the results
+alpha = 0.05
+if p_value < alpha:
+    print("Reject the null hypothesis: There is a significant difference in mean scores.")
+else:
+    print("Fail to reject the null hypothesis: No significant difference in mean scores.")
+This example uses Python's scipy.stats module to perform a one-way ANOVA test on the provided data. The results will help determine whether there are significant differences in mean scores among the three teaching methods.
+-----------------------------------------------------------------------------
+Hypothesis Testing Steps:
+1) Formulate Hypotheses: 
+H0: μ1 = μ2 = ...... = μk
+(μ represents the population mean of each group).
+H1: At least one μi is different.
+
+2) Collect and Prepare Data: Gather data from the groups being compared.
+Calculate Group Means: Calculate the mean of each group.
+
+3) Perform ANOVA Test:Use statistical software or tables to perform the ANOVA test, which calculates the F-statistic and associated p-value.
+
+4) Compare P-Value to Significance Level:If the p-value is less than the chosen significance level (e.g., 0.05), reject the null hypothesis.
+
+5) Interpret Results: If H0 is rejected, conclude that there are significant differences among at least some of the group means.
+Example Scenario: Suppose you want to test whether there are differences in the average scores of students exposed to different teaching methods (Method A, Method B, Method C).
+
+Hypotheses:
+H0 = μa = μb = μc
+H1 : atlest one μi is different.
+
+STEPS:- 
+Formulate hypotheses.
+Collect data on student scores for each teaching method.
+Calculate the mean score for each method.
+Use ANOVA to test the hypotheses.
+Compare the p-value to the significance level (e.g., 0.05).
+If p-value < 0.05, reject H0 and conclude there are significant differences.
+
+
+
+

@@ -1,0 +1,31 @@
+Chi-Square Test for Goodness of Fit: The chi-square goodness-of-fit test is used to assess whether the observed categorical data significantly deviates from the expected distribution. This test is particularly applicable when dealing with categorical variables and examining if the observed frequencies match the expected frequencies. 
+Key Concepts:
+Null Hypothesis (H0):There is no significant difference between the observed and expected frequencies.
+Alternative Hypothesis (H1): There is a significant difference between the observed and expected frequencies.
+Test Statistic (Chi-Square (X2)): Measures the discrepancy between the observed and expected frequencies.
+Degrees of Freedom (df): Calculated as the number of categories minus 1.
+Critical Value or P-Value: If the calculated chi-square value exceeds the critical value or if the p-value is below the chosen significance level, we reject the null hypothesis.
+
+Significance in Machine Learning: In machine learning, the chi-square test can be used for feature selection, determining which features are most important in predicting the target variable. It is applicable in scenarios where you want to assess whether the distribution of categorical variables in a dataset significantly differs from what would be expected by chance.
+
+Ex:- 
+from scipy.stats import chi2_contingency
+
+# Example observed data (contingency table)
+observed_data = [[20, 25, 15, 30, 20, 10]]
+
+# Perform chi-square test
+chi2_stat, p_val, dof, expected = chi2_contingency(observed_data)
+
+# Print results
+print(f"Chi-Square Statistic: {chi2_stat}")
+print(f"P-Value: {p_val}")
+print(f"Degrees of Freedom: {dof}")
+print(f"Expected Frequencies: {expected}")
+
+# Interpret the results
+alpha = 0.05
+if p_val < alpha:
+    print("Reject the null hypothesis: There is a significant difference.")
+else:
+    print("Fail to reject the null hypothesis: No significant difference.")

@@ -1,0 +1,56 @@
+Statistics in data science involves the collection, analysis, interpretation, presentation, and organization of data. It plays a crucial role in extracting meaningful insights and making informed decisions from data. There are two main branches of statistics: descriptive statistics and inferential statistics.
+
+1) Descriptive Statistics: Descriptive statistics involves the methods of organizing, summarizing, and presenting data in a meaningful way. It helps in simplifying large sets of data to make them more understandable. Descriptive statistics includes:
+
+a) Measures of Central Tendency:
+Mean (Average): The sum of all values divided by the number of values.
+Median: The middle value when data is arranged in ascending or descending order.
+Mode: The value that occurs most frequently in a dataset.
+
+In case of a symmetrical distribution, if you were to plot the data on a graph, it would exhibit mirror-image properties on either side of the central point. The mean, median, and mode would all align at the center, making the distribution symmetric. The normal distribution, or bell curve, is a classic example of a symmetric distribution where the mean, median, and mode are equal and located at the center.
+
+In a positively skewed distribution, also known as a right-skewed distribution or log-normal distribution, the mean is typically greater than the median, and both are greater than the mode. This indicates that the mean is pulled to the right by the presence of larger values, making it greater than the median, while the mode is often the smallest value due to the skewness towards the right.
+
+In a negatively skewed distribution, also known as a left-skewed distribution, the mean is typically less than the median, and both are less than the mode. This indicates that the mean is pulled to the left by the presence of smaller values, making it less than the median, while the mode is often the largest value due to the skewness towards the left.
+
+Mean (Average): The mean is the sum of all values divided by the number of values. It is heavily influenced by extreme values/Outliers (Outliers are data points that significantly differ from the rest of the dataset. They can distort the mean because they contribute disproportionately to the sum in the numerator.) because it considers every data point.
+Median: The median is the middle value when the data is arranged in ascending or descending order. It is not affected by extreme values; it only depends on the order, not the actual values.
+In summary, the median is less influenced by extreme values, making it a more robust measure of central tendency in situations where outliers may distort the mean. It provides a better reflection of the "typical" value in the presence of skewed or irregular data distributions.
+---------------------
+b) Measures of Dispersion:
+Range: The difference between the maximum and minimum values.
+-------------------------------
+Variance: A measure of the spread of data points around the mean.
+Population Variation: 
+Definition: The population variation measures the average squared deviation of each data point from the population mean.
+Sample Variation :
+Definition: The sample variation measures the average squared deviation of each data point from the sample mean, using Bessel's correction (n−1).
+Covariance:- Covariance is a statistical measure that describes the degree to which two variables change together. It indicates the direction of the linear relationship between two variables, whether they tend to increase or decrease together. The covariance between two variables, say  X & Y is denoted by Cov(X,Y).
+Positive Covariance (+): Indicates that as one variable increases, the other tends to increase as well. There is a positive linear relationship.
+Negative Covariance (-): Indicates that as one variable increases, the other tends to decrease. There is a negative linear relationship.
+Variance measures the spread or dispersion of a single variable. Covariance measures the degree to which two variables change together. Variance concerned with the variability of a single variable. Covariance concerned with the relationship between two variables.
+
+While covariance provides a measure of the direction of the relationship between two variables (positive or negative), it does not have a standardized scale or limit value. This lack of standardization makes it difficult to interpret the strength of the relationship.
+To address this, the Pearson correlation coefficient is often used. The Pearson correlation coefficient, denoted by r, is a standardized measure of the strength and direction of the linear relationship between two variables. It always falls between -1 and +1. The more the value towars +1, the more +ve corelated it is (X, Y).  The more the value towars -1, the more -ve corelated it is (X, Y). 
+--------------------------------
+Standard Deviation: The square root of the variance.
+Population Standard Deviation: Definition: The population standard deviation is the square root of the population variance.
+Sample Standard Deviation : Definition: The sample standard deviation is the square root of the sample variance.
+---------------------
+c) Frequency Distributions:
+Histograms: A graphical representation of the distribution of a dataset.
+---------------------
+d) Percentiles and Quartiles:
+Percentiles: Values that divide a dataset into 100 equal parts.
+Quartiles: Values that divide a dataset into four equal parts.
+---------------------
+Eg:- Imagine you're a teacher and you've just graded your students' final exam. Descriptive statistics would involve summarizing and organizing the exam scores to understand how the class performed.
+
+Mean (Average): You calculate the average score to get a sense of the typical performance across all students.
+Median: You find the middle score when the scores are arranged in order, giving you an idea of the "typical" student's performance.
+Mode: You identify the most common score, indicating the score that appears most frequently.
+Range: You look at the difference between the highest and lowest scores to understand the spread of scores.
+Standard Deviation: You calculate how much the scores deviate from the mean, providing a measure of the overall variability in performance.
+Frequency Distributions: You create a histogram to visualize how the scores are distributed across different ranges.
+Percentiles and Quartiles: You identify the scores that divide the students into different percentage groups, such as the top 25%.
+---------------------------------------------------------------------------------------------------------------------------------
